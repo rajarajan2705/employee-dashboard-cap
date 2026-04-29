@@ -1,0 +1,5 @@
+ID,name,description,createdAt,createdBy,modifiedAt,modifiedBy
+6c092d2a-2222-4af4-a65f-08fd13da2001,S/4HANA Rollout,Regional rollout support for finance and procurement,2026-04-01T10:15:00Z,admin,2026-04-01T10:15:00Z,admin
+6c092d2a-2222-4af4-a65f-08fd13da2002,People Analytics Dashboard,Build HR reporting dashboards on SAP BTP,2026-04-01T10:30:00Z,admin,2026-04-01T10:30:00Z,admin
+6c092d2a-2222-4af4-a65f-08fd13da2003,Learning Experience Refresh,Refresh learning catalog and onboarding journeys,2026-04-01T10:45:00Z,admin,2026-04-01T10:45:00Z,admin
+6c092d2a-2222-4af4-a65f-08fd13da2004,Master Data Cleanup,Standardize core master data across business units,2026-04-01T11:00:00Z,admin,2026-04-01T11:00:00Z,admin

@@ -1,0 +1,6 @@
+ID,courseDescription,availability_code,courseContacts,createdAt,createdBy,modifiedAt,modifiedBy
+0f4b4b2a-1111-4fd3-8b0f-6ac57f2a1001,SAP CAPM Foundations,01,academy@corp.test,2026-04-01T09:00:00Z,admin,2026-04-01T09:00:00Z,admin
+0f4b4b2a-1111-4fd3-8b0f-6ac57f2a1002,TypeScript for Enterprise Apps,03,engineering.enablement@test.com,2026-04-01T09:15:00Z,admin,2026-04-01T09:15:00Z,admin
+0f4b4b2a-1111-4fd3-8b0f-6ac57f2a1003,Fiori Elements Overview,03,fiori.coe@test.com,2026-04-01T09:30:00Z,admin,2026-04-01T09:30:00Z,admin
+0f4b4b2a-1111-4fd3-8b0f-6ac57f2a1004,Advanced OData Modeling,05,odata.guild@test.com,2026-04-01T09:45:00Z,admin,2026-04-01T09:45:00Z,admin
+0f4b4b2a-1111-4fd3-8b0f-6ac57f2a1005,Cloud Security Essentials,01,security.office@test.com,2026-04-01T10:00:00Z,admin,2026-04-01T10:00:00Z,admin

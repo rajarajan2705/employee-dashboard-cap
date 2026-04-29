@@ -1,0 +1,4 @@
+code,locale,name,descr
+01,en,Open,Learning has been assigned and not started
+03,en,In Progress,Learning is currently in progress
+05,en,Completed,Learning has been completed

@@ -1,0 +1,49 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+
+
+
+
+    {
+      "name": "EMPLOYEE_DASHBOARD",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/",
+      "runtimeExecutable": "cds",
+      "runtimeArgs": ["serve"],
+      "env": {
+        "NODE_ENV": "development"
+      },
+      "skipFiles": [
+        "<node_internals>/**"
+      ]
+    },
+    {
+      "name": "Debug CAP Project 2",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/project2",
+      "runtimeArgs": [
+        "-r",
+        "ts-node/register",
+        "-r",
+        "tsconfig-paths/register"
+      ],
+      "args": [
+        "${workspaceFolder}/project2/server.ts"
+      ],
+      "env": {
+        "NODE_ENV": "development"
+      },
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "sourceMaps": true,
+      "outFiles": [
+        "${workspaceFolder}/project2/gen/**/*.js",
+        "${workspaceFolder}/project2/dist/**/*.js"
+      ]
+    }
+  ]
+}

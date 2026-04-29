@@ -1,0 +1,44 @@
+{
+  "name": "employee_dashboard",
+  "version": "1.0.0",
+  "dependencies": {
+    "@sap/cds": "^9"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^2",
+    "@cap-js/cds-typer": ">=0.1",
+    "@cap-js/cds-types": "^0.16.0",
+    "@types/node": "^24.0.0",
+    "tsx": "^4",
+    "typescript": "^5",
+    "cds-plugin-ui5": "^0.13.0"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "watch-employeedashboard": "cds watch --open employeedashboard/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-learningsmaster": "cds watch --open learningsmaster/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-projectsmaster": "cds watch --open projectsmaster/index.html?sap-ui-xx-viewCache=false --livereload false"
+  },
+  "private": true,
+  "cds": {
+    "requires": {
+      "db": {
+        "kind": "sqlite",
+        "credentials": {
+          "url": "db.sqlite"
+        }
+      }
+    }
+  },
+  "imports": {
+    "#cds-models/*": "./@cds-models/*/index.js"
+  },
+  "workspaces": [
+    "app/*"
+  ],
+  "sapux": [
+    "app/employeedashboard",
+    "app/learningsmaster",
+    "app/projectsmaster"
+  ]
+}

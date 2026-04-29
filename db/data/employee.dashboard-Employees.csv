@@ -1,0 +1,6 @@
+ID,employeeID,firstName,lastName,emailID,phoneNumber,status_code,address_street,address_city,address_country_code,bankInfo_name,bankInfo_accountNumber,bankInfo_code,annualLeavesGranted,annualLeavesUsed,createdAt,createdBy,modifiedAt,modifiedBy
+8a70f0d2-3333-4d7e-b93b-d9a2fd873001,EMP001,Aarav,Sharma,aarav.sharma@test.com,+91-9001001001,A,12 Residency Road,Bengaluru,IN,HDFC Bank,110020003331,HD001,20,4,2026-04-02T08:00:00Z,admin,2026-04-02T08:00:00Z,admin
+8a70f0d2-3333-4d7e-b93b-d9a2fd873002,EMP002,Emma,Collins,emma.collins@test.com,+1-415-555-0102,A,75 Market Street,San Francisco,US,Chase Bank,110020003332,CH002,20,6,2026-04-02T08:10:00Z,admin,2026-04-02T08:10:00Z,admin
+8a70f0d2-3333-4d7e-b93b-d9a2fd873003,EMP003,Lukas,Weber,lukas.weber@test.com,+49-30-555-0103,A,18 Friedrichstrasse,Berlin,DE,Deutsche Bank,110020003333,DB003,20,2,2026-04-02T08:20:00Z,admin,2026-04-02T08:20:00Z,admin
+8a70f0d2-3333-4d7e-b93b-d9a2fd873004,EMP004,Mei,Lim,mei.lim@test.com,+65-6555-0104,I,9 Raffles Place,Singapore,SG,DBS Bank,110020003334,DBS04,20,9,2026-04-02T08:30:00Z,admin,2026-04-02T08:30:00Z,admin
+8a70f0d2-3333-4d7e-b93b-d9a2fd873005,EMP005,Noah,Patel,noah.patel@test.com,+91-9001001005,A,44 MG Road,Pune,IN,ICICI Bank,110020003335,IC005,20,3,2026-04-02T08:40:00Z,admin,2026-04-02T08:40:00Z,admin
