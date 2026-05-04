@@ -1,4 +1,4 @@
-using ProjectsService as service from '../../srv/projects_master-service';
+using ProjectsService as service from '../../srv/ProjectsMasterService';
 annotate service.ProjectsMaster with @(
     UI.FieldGroup #GeneratedGroup : {
         $Type : 'UI.FieldGroupType',

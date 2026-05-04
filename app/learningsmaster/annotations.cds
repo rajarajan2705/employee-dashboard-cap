@@ -1,4 +1,4 @@
-using LearningsService as service from '../../srv/learnings_master-service';
+using LearningsService as service from '../../srv/LearningsMasterService';
 using from '../../db/schema';
 
 annotate service.LearningsMaster with @(

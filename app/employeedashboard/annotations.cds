@@ -1,4 +1,4 @@
-using EmployeeService as service from '../../srv/employee-service';
+using EmployeeService as service from '../../srv/EmployeeService';
 using from '../../db/schema';
 
 annotate service.Employees with @(
@@ -159,7 +159,7 @@ annotate service.Employees with @(
         TypeNamePlural: '{i18n>Employees}',
         Description   : {
             $Type: 'UI.DataField',
-            Value: name,
+            Value: employeeID,
         },
         TypeImageUrl  : 'sap-icon://employee',
     },

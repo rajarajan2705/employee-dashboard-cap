@@ -1,4 +1,4 @@
-using EmployeeService as service from '../../srv/employee-service';
+using EmployeeService as service from '../../srv/EmployeeService';
 using from '../../db/schema';
 
 annotate service.Employees with actions {
