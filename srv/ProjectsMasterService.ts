@@ -26,3 +26,5 @@ export class ProjectsService extends cds.ApplicationService {
   }
 
 }
+
+export default ProjectsService;
