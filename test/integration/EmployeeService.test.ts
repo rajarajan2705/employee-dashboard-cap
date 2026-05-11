@@ -1,10 +1,18 @@
 import cds from '@sap/cds';
 import { expect } from 'chai';
+// import axios from 'axios';
 
-const test = cds.test('.');
+const test = cds.test(__dirname + "/../..");
+
+// (test as any).defaults.auth=
 
 describe('EmployeeService - Integration Tests', () => {
-    const { GET, POST, DELETE } = test;
+    // before(() => {
+    //     axios.defaults.auth = { username: 'Rajarajan', password: '' };
+    // });
+
+    const { GET, POST, DELETE, axios } = test as any;
+    axios.defaults.auth = { username: 'Rajarajan' };
 
     // Helper: creates a draft employee and activates it in one call.
     // Pass 'overrides' to replace specific fields, e.g. { firstName: 'John' }

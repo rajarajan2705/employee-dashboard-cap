@@ -18,11 +18,11 @@ export class EmployeeRepository {
         );
     }
 
-    async findEmployeeByBankAccount(accountNumber: string): Promise<any> {
+    async findEmployeeByBankAccount(accountNumber: string, ID: string): Promise<any> {
         return await cds.run(
             SELECT.one
                 .from("EmployeeService.Employees")
-                .where({ bankInfo_accountNumber: accountNumber })
+                .where('bankInfo_accountNumber =', accountNumber, 'and ID !=', ID)
         );
     }
 
@@ -46,6 +46,13 @@ export class EmployeeRepository {
             UPDATE("EmployeeService.Employees")
                 .set({ status_code })
                 .where({ ID })
+        );
+    }
+
+    async findRatingByEmployeeAndYear(employee_ID: string, year: number): Promise<any> {
+        return await cds.run(
+            SELECT.one.from("EmployeeService.Ratings")
+                .where({ employee_ID, year })
         );
     }
 

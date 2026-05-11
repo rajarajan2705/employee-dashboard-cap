@@ -24,8 +24,9 @@ annotate service.Employees with @(
                 Label: '{i18n>Name}',
             },
             {
-                $Type: 'UI.DataField',
-                Value: status_code,
+                $Type      : 'UI.DataField',
+                Value      : status_code,
+                Criticality: status.criticality,
             },
             {
                 $Type: 'UI.DataField',
@@ -127,8 +128,9 @@ annotate service.Employees with @(
             Value: emailID,
         },
         {
-            $Type: 'UI.DataField',
-            Value: status_code,
+            $Type      : 'UI.DataField',
+            Value      : status_code,
+            Criticality: status.criticality,
         },
         {
             $Type: 'UI.DataField',
@@ -388,7 +390,10 @@ annotate service.Projects with @(UI.LineItem #Projects: [
 ]);
 
 annotate service.Ratings with {
-    rating @Common.Label: '{i18n>Rating}'
+    rating @(
+        Common.Label       : '{i18n>Rating}',
+        Common.FieldControl: #Mandatory,
+    )
 };
 
 annotate service.Ratings with {
@@ -402,7 +407,7 @@ annotate service.Ratings with @(
     UI.LineItem #Ratings: [
         {
             $Type : 'UI.DataFieldForAnnotation',
-            Target: '@UI.DataPoint#rating',
+            Target : '@UI.DataPoint#rating1',
         },
         {
             $Type: 'UI.DataField',
@@ -424,6 +429,11 @@ annotate service.Ratings with @(
         Value        : rating,
         Visualization: #Rating,
         TargetValue  : 5,
+    },
+    UI.DataPoint #rating1 : {
+        Value : rating,
+        Visualization : #Rating,
+        TargetValue : 5,
     },
 );
 

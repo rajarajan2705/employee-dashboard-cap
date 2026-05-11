@@ -51,9 +51,9 @@ describe('EmployeeService - Unit Tests', () => {
     describe('validateBankAccountNum', () => {
 
         it('should call req.error when bank account number already exists for another employee', async () => {
-            sinon.stub(employeeRepository, 'findEmployeeByBankAccount').resolves({ ID: 'test' });
+            sinon.stub(employeeRepository, 'findEmployeeByBankAccount').resolves({ ID: 'other-emp' });
             const req = {
-                data: { bankInfo_accountNumber: '123456789012' },
+                data: { ID: 'current-emp', bankInfo_accountNumber: '123456789012' },
                 error: sinon.stub()
             };
 
@@ -68,7 +68,7 @@ describe('EmployeeService - Unit Tests', () => {
         it('should NOT call req.error when bank account is unique', async () => {
             sinon.stub(employeeRepository, 'findEmployeeByBankAccount').resolves(null);
             const req = {
-                data: { bankInfo_accountNumber: '199019911992' },
+                data: { ID: 'current-emp', bankInfo_accountNumber: '199019911992' },
                 error: sinon.stub()
             };
 
@@ -79,7 +79,7 @@ describe('EmployeeService - Unit Tests', () => {
 
         it('should return early and skip DB call when no account number provided', async () => {
             const repoStub = sinon.stub(employeeRepository, 'findEmployeeByBankAccount');
-            const req = { data: {}, error: sinon.stub() };
+            const req = { data: { ID: 'current-emp' }, error: sinon.stub() };
 
             await service.validateBankAccountNum(req);
 
@@ -219,7 +219,7 @@ describe('EmployeeService - Unit Tests', () => {
 
             expect(req.reject.calledWith(400, 'Only Inactive Employees can be deleted'));
         });
-        
+
         it('should allow deletion if employee is inactive', async () => {
             sinon.stub(employeeRepository, 'findEmployeeByID').resolves({ status_code: EMPLOYEE_STATUS.inactive });
             const req = {

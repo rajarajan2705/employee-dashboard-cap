@@ -6,6 +6,7 @@ import {
   Projects,
   ProjectsMaster,
   Countries,
+  Ratings,
   // AvailabilityStatu,
   // AvailabilityStatus
 } from '#cds-models/EmployeeService'
@@ -20,10 +21,13 @@ import { employeeRepository } from './EmployeeRepository';
 class EmployeeService extends cds.ApplicationService {
   async init(): Promise<any> {
     this.before('CREATE', Employees, this.generateEmployeeID.bind(this));
-    this.before('CREATE', Employees, this.validateBankAccountNum.bind(this));
+    this.before('SAVE', Employees, this.validateBankAccountNum.bind(this));
     this.before('CREATE', Employees, this.generateEmailID.bind(this));
     this.before('CREATE', Employees, this.assignInitialLearnings.bind(this));
     this.before('DELETE', Employees, this.deleteEmployee.bind(this));
+    // this.before(['CREATE', 'UPDATE'], 'Ratings', this.validateDuplicateRatingYear.bind(this));
+    // this.before('SAVE', Ratings, this.validateDuplicateRatingYear.bind(this));
+    this.before('SAVE', Employees, this.validateDuplicateRatingYear.bind(this));
     this.on("activate", this.setToActive.bind(this));
     this.on("deactivate", this.setToInactive.bind(this));
 
@@ -72,16 +76,11 @@ class EmployeeService extends cds.ApplicationService {
   }
 
   async validateBankAccountNum(req: any): Promise<void> {
-    const { bankInfo_accountNumber } = req.data;
+    const { ID, bankInfo_accountNumber } = req.data;
 
     if (!bankInfo_accountNumber) return;
 
-    // const existingBankAccountQuery = SELECT.one
-    //                                  .from("EmployeeService.Employees")
-    //                                  .where({bankInfo_accountNumber: bankInfo_accountNumber});
-
-    // const result = await cds.run(existingBankAccountQuery);
-    const result = await employeeRepository.findEmployeeByBankAccount(bankInfo_accountNumber);
+    const result = await employeeRepository.findEmployeeByBankAccount(bankInfo_accountNumber, ID);
 
     if (result) {
       return req.error(
@@ -170,6 +169,18 @@ class EmployeeService extends cds.ApplicationService {
     }
   }
 
+  async validateDuplicateRatingYear(req: any): Promise<void> {
+    const ratings: any[] = req.data.ratings ?? [];
+
+    for (const rating of ratings) {
+      if (!rating.year) continue;
+
+      const duplicates = ratings.filter(r => r.year === rating.year);
+      if (duplicates.length > 1) {
+        return req.error({ code: 400, message: `A rating for year ${rating.year} already exists for this employee`, target: 'year' });
+      }
+    }
+  }
 }
 
 export default EmployeeService;

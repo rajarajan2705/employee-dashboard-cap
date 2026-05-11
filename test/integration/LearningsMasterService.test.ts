@@ -4,7 +4,8 @@ import { expect } from 'chai';
 const test = cds.test('.');
 
 describe('LearningsMasterService - Integration Tests', () => {
-    const { GET, POST, DELETE } = test;
+    const { GET, POST, DELETE, axios } = test as any;
+    axios.defaults.auth = { username: 'TEST_USER_LM' };
 
     // Find LearningsMaster ID by courseDescription
     async function getLearningIDByDescription(description: string): Promise<string> {

@@ -6,3 +6,4 @@ service LearningsService {
 }
 
 annotate LearningsService.LearningsMaster with @odata.draft.enabled;
+annotate LearningsService with @requires: 'Learning_Manager';

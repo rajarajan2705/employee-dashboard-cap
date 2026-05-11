@@ -9,7 +9,7 @@ using {
 } from '../node_modules/@sap/cds/common';
 
 entity Employees : cuid, managed {
-    employeeID            : String(10) @readonly;
+    employeeID            : String(10)         @readonly;
     firstName             : String             @mandatory;
     lastName              : String             @mandatory;
     name                  : String  = trim(firstName || ' ' || lastName);
@@ -48,10 +48,11 @@ type Bank {
 }
 
 entity EmployeeStatus : CodeList {
-    key code : String(1) enum {
+    key code        : String(1) enum {
             inactive = 'I';
             active = 'A';
         };
+        criticality : Integer;
 }
 
 entity Ratings : cuid, managed {

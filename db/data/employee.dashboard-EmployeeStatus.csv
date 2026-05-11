@@ -1,3 +1,3 @@
-code,name,descr
-A,Active,Employee is currently active
-I,Inactive,Employee is currently inactive
+code,name,descr,criticality
+A,Active,Employee is currently active,3
+I,Inactive,Employee is currently inactive,1

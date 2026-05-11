@@ -38,6 +38,33 @@
         "credentials": {
           "url": "db.sqlite"
         }
+      },
+      "auth": {
+        "kind": "mocked",
+        "users": {
+          "Rajarajan": {
+            "roles": [
+              "HR_Admin",
+              "Learning_Manager",
+              "Project_Manager"
+            ]
+          },
+          "TEST_USER_AUDIT": {
+            "roles": [
+              "HR_Audit"
+            ]
+          },
+          "TEST_USER_LM": {
+            "roles": [
+              "Learning_Manager"
+            ]
+          },
+          "TEST_USER_PM": {
+            "roles": [
+              "Project_Manager"
+            ]
+          }
+        }
       }
     }
   },

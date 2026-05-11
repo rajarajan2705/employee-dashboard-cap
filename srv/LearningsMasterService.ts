@@ -5,8 +5,7 @@ import { learningsMasterRepository } from './LearningsMasterRepository';
 export class LearningsService extends cds.ApplicationService {
   async init(): Promise<any> {
 
-    this.before('DELETE', LearningsMaster, this.checkEmployeesAssigned.bind(this))
-
+    this.before('DELETE', LearningsMaster, this.checkEmployeesAssigned.bind(this));
     return super.init()
   }
 
@@ -23,6 +22,7 @@ export class LearningsService extends cds.ApplicationService {
       req.reject(400, `This course cannot be deleted as it has been assigned to Employees`);
     }
   }
+
 }
 
 export default LearningsService;

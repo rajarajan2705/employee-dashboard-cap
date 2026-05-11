@@ -6,3 +6,4 @@ service ProjectsService {
 }
 
 annotate ProjectsService.ProjectsMaster with @odata.draft.enabled;
+annotate ProjectsService with @requires: 'Project_Manager';

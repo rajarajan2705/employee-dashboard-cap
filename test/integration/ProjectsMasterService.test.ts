@@ -4,7 +4,8 @@ import { expect } from 'chai';
 const test = cds.test('.');
 
 describe('ProjectsMasterService - Integration tests', () => {
-    const { GET, POST, DELETE } = test;
+    const { GET, POST, DELETE, axios } = test as any;
+    axios.defaults.auth = { username: 'TEST_USER_PM' };
 
     // Find ProjectsMaster ID by name
     async function getProjectIDByName(name: string): Promise<string> {

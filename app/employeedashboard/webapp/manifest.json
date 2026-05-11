@@ -129,7 +129,16 @@
             "settings": {
               "editableHeaderContent": false,
               "contextPath": "/Employees",
-              "navigation": {}
+              "navigation": {},
+              "controlConfiguration": {
+                "ratings/@com.sap.vocabularies.UI.v1.LineItem#Ratings": {
+                  "columns": {
+                    "DataFieldForAnnotation::DataPoint::rating1": {
+                      "width": "10%"
+                    }
+                  }
+                }
+              }
             }
           }
         }
